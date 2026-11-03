@@ -1,0 +1,7 @@
+{
+  "name": "EraseLoop",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
