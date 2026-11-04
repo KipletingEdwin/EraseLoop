@@ -5,9 +5,12 @@ import { inject, Service } from '@angular/core';
 @Service()
 export class Dataservice {
 
-    private httt = inject(HttpClient)
+    private http = inject(HttpClient)
 
     private apiUrl = 'https://jsonplaceholder.typicode.com/posts'
 
+    getPosts() {
+        return this.http.get(this.apiUrl);
+    }
 
 }

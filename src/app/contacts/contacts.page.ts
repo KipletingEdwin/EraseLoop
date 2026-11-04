@@ -11,6 +11,7 @@ export class ContactsPage implements OnInit {
   constructor() { }
 
   ngOnInit() {
+    
   }
 
 }

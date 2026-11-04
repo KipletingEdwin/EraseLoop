@@ -1,4 +1,6 @@
-import { Component } from '@angular/core';
+
+import { Component, inject } from '@angular/core';
+import { Dataservice } from '../dataservice';
 
 @Component({
   selector: 'app-home',
@@ -6,8 +8,25 @@ import { Component } from '@angular/core';
   styleUrls: ['home.page.scss'],
   standalone: false,
 })
-export class HomePage {
 
-  constructor() {}
+
+export class HomePage { 
+
+  constructor(private dataService: Dataservice) {}
+
+  ngOnInit() {
+
+    this.dataService.getPosts().subscribe({
+      next: (response) => {
+        console.log(response)
+      },
+      error: (err) => {
+        console.log(err);
+      }
+    })
+
+  }
+
+
 
 }
