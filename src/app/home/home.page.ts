@@ -10,22 +10,11 @@ import { Dataservice } from '../dataservice';
 })
 
 
-export class HomePage implements OnInit { 
+export class HomePage { 
 
-  constructor(private dataService: Dataservice) {}
+  constructor() {}
 
-  ngOnInit() {
 
-    this.dataService.getPosts().subscribe({
-      next: (response) => {
-        console.log(response)
-      },
-      error: (err) => {
-        console.log(err);
-      }
-    })
-
-  }
 
 
 

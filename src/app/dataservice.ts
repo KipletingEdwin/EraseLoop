@@ -1,16 +1,20 @@
 
 import { HttpClient } from '@angular/common/http';
-import { inject, Service } from '@angular/core';
+import { Injectable } from '@angular/core';
 
-@Service()
+@Injectable({
+  providedIn: 'root',
+})
 export class Dataservice {
 
-    private http = inject(HttpClient)
+  constructor( private http: HttpClient ) {}
 
-    private apiUrl = 'https://jsonplaceholder.typicode.com/posts'
+  private apiUrl = 'https://jsonplaceholder.typicode.com/posts'
 
-    getPosts() {
-        return this.http.get(this.apiUrl);
-    }
+  getPosts() {
+    return this.http.get(this.apiUrl);
+  }
 
 }
+
+
