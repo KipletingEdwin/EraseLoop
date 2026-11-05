@@ -1,5 +1,6 @@
 
 import { Component, OnInit } from '@angular/core';
+import { Dataservice } from '../dataservice';
 
 @Component({
   selector: 'app-comments',
@@ -9,9 +10,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CommentsPage implements OnInit {
 
-  constructor() { }
+  comments: any[] = [];
+
+  constructor( private dataService: Dataservice ) { }
 
   ngOnInit() {
+
+    this.dataService.getComments().subscribe({
+      next: (res) => this.comments = res,
+      error: (err) => console.log(err)
+    })
+
   }
 
 }
