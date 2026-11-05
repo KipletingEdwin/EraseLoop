@@ -1,7 +1,7 @@
 
 <ion-header [translucent]="true">
-  <ion-toolbar color="secondary">
-    <ion-title class="ion-text-center">This is a test page</ion-title>
+  <ion-toolbar>
+    <ion-title class="ion-text-center"> Test Page </ion-title>
   </ion-toolbar>
 </ion-header>
 
@@ -11,7 +11,7 @@
 
       <ion-col size="12" sizeMd="6" sizeLg="4">
         <ion-card>
-            <ion-card-header class="ion-text-center" >
+            <ion-card-header class="ion-text-center" color="success" >
               <ion-card-title>Posts</ion-card-title>
               <ion-card-subtitle>Here is a list of posts from the API</ion-card-subtitle>
             </ion-card-header>
@@ -26,19 +26,33 @@
 
       <ion-col size="12" sizeMd="6" sizeLg="4">
         <ion-card>
-          <ion-card-header class="ion-text-center">
+          <ion-card-header class="ion-text-center" color="warning">
             <ion-card-title class="ion-text-center">Users</ion-card-title>
-            <ion-card-subtitle>Here is a alists of users from the API</ion-card-subtitle>
+            <ion-card-subtitle>Here is a a lists of users from the API</ion-card-subtitle>
           </ion-card-header>
 
             <ion-card-content></ion-card-content>
             <ion-card-content></ion-card-content>
-            <ion-card-content class="ion-text-center" >
-              <ion-button fill="outline" [routerLink]="['/users']" >Users</ion-button>
+            <ion-card-content class="ion-text-center">
+              <ion-button fill="outline" [routerLink]="['/users']">Users</ion-button>
             </ion-card-content>
         </ion-card>
       </ion-col>
 
+      <ion-col size="12" sizeMd="6" sizeLg="4">
+        <ion-card>
+          <ion-card-header class="ion-text-center" color="danger">
+            <ion-card-title>Comments</ion-card-title>
+            <ion-card-subtitle>This is a list of comments from the API</ion-card-subtitle>
+          </ion-card-header>
+
+          <ion-card-content></ion-card-content>
+          <ion-card-content></ion-card-content>
+          <ion-card-content  class="ion-text-center">
+            <ion-button fill="outline" [routerLink]="['/comments']" >Commets</ion-button>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
 
     </ion-row>
   </ion-grid>
