@@ -1,5 +1,5 @@
 
-import { Component, inject } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Dataservice } from '../dataservice';
 
 @Component({
@@ -10,7 +10,7 @@ import { Dataservice } from '../dataservice';
 })
 
 
-export class HomePage { 
+export class HomePage implements OnInit { 
 
   constructor(private dataService: Dataservice) {}
 
