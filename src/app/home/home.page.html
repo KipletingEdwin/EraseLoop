@@ -1,27 +1,16 @@
 
 <ion-header [translucent]="true">
   <ion-toolbar color="secondary">
-
-    <ion-buttons slot="start">
-      <ion-button>EK</ion-button>
-    </ion-buttons>
-
-    <ion-buttons slot="end">
-      <ion-button>Home</ion-button>
-      <ion-button>About</ion-button>
-      <ion-button>Services</ion-button>
-      <ion-button>Projects</ion-button>
-      <ion-button>Contacts</ion-button>
-    </ion-buttons>
-    
+    <ion-title class="ion-text-center">This is a test page</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
   <ion-grid>
     <ion-row>
+
       <ion-col size="12" sizeMd="6" sizeLg="4">
-        <ion-card >
+        <ion-card>
             <ion-card-header class="ion-text-center" >
               <ion-card-title>Posts</ion-card-title>
               <ion-card-subtitle>Here is a list of posts from the API</ion-card-subtitle>
@@ -30,32 +19,27 @@
             <ion-card-content></ion-card-content>
             <ion-card-content></ion-card-content>
             <ion-card-content class="ion-display-flex ion-justify-content-center">
-              <ion-button [routerLink]="['/posts']"  >Posts</ion-button>
+              <ion-button fill="outline" [routerLink]="['/posts']">Posts</ion-button>
             </ion-card-content>
         </ion-card>
       </ion-col>
+
+      <ion-col size="12" sizeMd="6" sizeLg="4">
+        <ion-card>
+          <ion-card-header class="ion-text-center">
+            <ion-card-title class="ion-text-center">Users</ion-card-title>
+            <ion-card-subtitle>Here is a alists of users from the API</ion-card-subtitle>
+          </ion-card-header>
+
+            <ion-card-content></ion-card-content>
+            <ion-card-content></ion-card-content>
+            <ion-card-content class="ion-text-center" >
+              <ion-button fill="outline" [routerLink]="['/users']" >Users</ion-button>
+            </ion-card-content>
+        </ion-card>
+      </ion-col>
+
+
     </ion-row>
-
-
   </ion-grid>
-
-
-
-
-
-
-
-
-
-
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
-
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
-  </div>
 </ion-content>
