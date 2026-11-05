@@ -10,17 +10,15 @@ import { Dataservice } from '../dataservice';
 })
 export class PostsPage implements OnInit {
 
+  posts: any[] = [];
+
   constructor( private dataservice: Dataservice ) { }
 
   ngOnInit() {
 
     this.dataservice.getPosts().subscribe({
-      next: (response) => {
-        console.log(response)
-      },
-      error: (err) => {
-        console.log(err)
-      }
+      next: (res) => this.posts = res,
+      error: (err) => console.log(err) 
     })
   }
 
