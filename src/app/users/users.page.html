@@ -6,8 +6,17 @@
 </ion-header>
 
 <ion-content>
-  <ion-list>
-    
-  </ion-list>
+  <ion-list lines="inset">
+    <ion-item *ngFor="let user of users">
+      <ion-icon name="person-circle-outline" slot="start" color="tertiary" size="large"></ion-icon>
+      <ion-label>
+        <h2>{{ user.name }}</h2>
+        <p>{{ user.username }}</p>
+        <p>{{ user.email }}</p>
+        <p>Company: {{user.company.name}} </p>
+        <p>Location: {{user.address.city}}, {{ user.address.street }} </p>
+      </ion-label>
+    </ion-item>
 
+  </ion-list>
 </ion-content>
