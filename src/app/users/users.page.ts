@@ -1,4 +1,6 @@
+
 import { Component, OnInit } from '@angular/core';
+import { Dataservice } from '../dataservice';
 
 @Component({
   selector: 'app-users',
@@ -8,9 +10,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UsersPage implements OnInit {
 
-  constructor() { }
+  users: any[] = [];
+
+  constructor( private dataservice: Dataservice ) { }
 
   ngOnInit() {
+    this.dataservice.getUsers().subscribe({
+      next: (res) => this.users = res,
+      error: (err) => console.log(err)
+    })
+
+    
   }
 
 }
