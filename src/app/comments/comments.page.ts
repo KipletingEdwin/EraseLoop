@@ -16,10 +16,15 @@ export class CommentsPage implements OnInit {
 
   ngOnInit() {
 
-    this.dataService.getComments().subscribe({
-      next: (res) => this.comments = res,
+  }
+
+
+  ionViewDidEnter() {
+      this.dataService.getComments().subscribe({
+      next: (res) => { console.log('Comments API response:',res);  this.comments = res},
       error: (err) => console.log(err)
     })
+     
 
   }
 

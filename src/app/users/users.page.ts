@@ -15,12 +15,15 @@ export class UsersPage implements OnInit {
   constructor( private dataservice: Dataservice ) { }
 
   ngOnInit() {
-    this.dataservice.getUsers().subscribe({
-      next: (res) => this.users = res,
+
+  }
+
+  ionViewDidEnter() {
+      this.dataservice.getUsers().subscribe({
+      next: (res) => { console.log('Users API response:',res); this.users = res},
       error: (err) => console.log(err)
     })
-
-    
   }
+
 
 }

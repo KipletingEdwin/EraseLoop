@@ -5,7 +5,8 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
+<ion-content [fullscreen]="true" >
+  <ion-toolbar color="primary" ></ion-toolbar>
   <ion-list lines="full">
     <ion-item *ngFor="let comment of comments">
       <ion-avatar slot="start">
