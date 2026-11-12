@@ -24,8 +24,6 @@ export class CommentsPage implements OnInit {
       next: (res) => { console.log('Comments API response:',res);  this.comments = res},
       error: (err) => console.log(err)
     })
-     
-
   }
 
 }

@@ -7,14 +7,19 @@
 
 
 <ion-content>
-  <ion-toolbar color="secondary" ></ion-toolbar>
+  <ion-toolbar color="primary"></ion-toolbar>
+  <!-- <pre>{{ posts | json }}</pre> -->
+
+
   <ion-list lines="inset">
-    <ion-item *ngFor="let post of posts">
+    @for (post of (posts$ | async); track post.id) {
+      <ion-item>
       <ion-icon name="document-text-outline" slot="start" color="primary"></ion-icon>
       <ion-label class="ion-text-wrap">
         <h2>{{ post.title }}</h2>
         <p>{{ post.body }}</p>
       </ion-label>
     </ion-item>
+    }
   </ion-list>
 </ion-content>

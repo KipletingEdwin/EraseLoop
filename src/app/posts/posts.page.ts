@@ -1,7 +1,7 @@
 
 import { Component, OnInit } from '@angular/core';
 import { Dataservice } from '../dataservice';
-import { Subscription } from 'rxjs';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-posts',
@@ -10,27 +10,19 @@ import { Subscription } from 'rxjs';
   standalone: false,
 })
 export class PostsPage implements OnInit {
+  posts$!: Observable<any[]>;
 
-  posts: any[] = [];
-  private postsSub!: Subscription;
-
-  constructor( 
-    private dataservice: Dataservice,
-  ) { }
-
-  ionViewDidEnter() {
-      this.dataservice.getPosts().subscribe({
-      next: (res) =>  { console.log('Posts API response:', res);  this.posts = res},
-      error: (err) => console.log(err) 
-    })
-
-  }
+  constructor(private dataservice: Dataservice) {}
 
   ngOnInit() {
-
-
+    this.loadPosts();
   }
 
-  
+  ionViewWillEnter() {
+    this.loadPosts();
+  }
 
+  loadPosts() {
+    this.posts$ = this.dataservice.getPosts();
+  }
 }
