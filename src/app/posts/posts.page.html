@@ -7,10 +7,6 @@
 
 
 <ion-content>
-  <ion-toolbar color="primary"></ion-toolbar>
-  <!-- <pre>{{ posts | json }}</pre> -->
-
-
   <ion-list lines="inset">
     @for (post of (posts$ | async); track post.id) {
       <ion-item>

@@ -1,6 +1,7 @@
 
 import { Component, OnInit } from '@angular/core';
 import { Dataservice } from '../dataservice';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-users',
@@ -10,19 +11,21 @@ import { Dataservice } from '../dataservice';
 })
 export class UsersPage implements OnInit {
 
-  users: any[] = [];
+  users$!: Observable<any[]>;
 
   constructor( private dataservice: Dataservice ) { }
 
   ngOnInit() {
+    this.loadUsers();
+  }
+
+  ionViewWillEnter() {
+    this.loadUsers();
 
   }
 
-  ionViewDidEnter() {
-      this.dataservice.getUsers().subscribe({
-      next: (res) => { console.log('Users API response:',res); this.users = res},
-      error: (err) => console.log(err)
-    })
+  loadUsers() {
+    this.users$ = this.dataservice.getUsers();
   }
 
 
