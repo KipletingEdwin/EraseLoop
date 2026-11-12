@@ -1,6 +1,7 @@
 
 import { Component, OnInit } from '@angular/core';
 import { Dataservice } from '../dataservice';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-comments',
@@ -10,20 +11,21 @@ import { Dataservice } from '../dataservice';
 })
 export class CommentsPage implements OnInit {
 
-  comments: any[] = [];
+  comments$!: Observable<any[]>;
 
   constructor( private dataService: Dataservice ) { }
 
   ngOnInit() {
+    this.loadComments();
 
   }
 
-
   ionViewDidEnter() {
-      this.dataService.getComments().subscribe({
-      next: (res) => { console.log('Comments API response:',res);  this.comments = res},
-      error: (err) => console.log(err)
-    })
+    this.loadComments();
+  }
+
+  loadComments() {
+    this.comments$ = this.dataService.getComments();
   }
 
 }

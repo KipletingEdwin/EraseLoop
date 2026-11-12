@@ -5,22 +5,28 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true" >
-  <ion-toolbar color="secondary" ></ion-toolbar>
+<ion-content [fullscreen]="true">
   <ion-list lines="full">
-    <ion-item *ngFor="let comment of comments">
+    @for (comment of (comments$ | async); track comment.id) {
+    <ion-item>
       <ion-avatar slot="start">
-        <ion-icon name="chatbubble-ellipses-outline" size="large" color="secondary"></ion-icon>
+        <ion-icon
+          name="chatbubble-ellipses-outline"
+          size="large"
+          color="secondary"
+        ></ion-icon>
       </ion-avatar>
       <ion-label class="ion-text-wrap">
         <ion-text color="dark">
-          <h3> <strong> {{ comment.name }} </strong> </h3>
+          <h3><strong> {{ comment.name }} </strong></h3>
         </ion-text>
         <ion-note color="medium"> {{ comment.email }} </ion-note>
-        <p class="ion-margin-top" style="font-style: italic;">{{comment.body}}</p>
+        <p class="ion-margin-top" style="font-style: italic">
+          {{comment.body}}
+        </p>
       </ion-label>
-
     </ion-item>
-  </ion-list>
 
+    }
+  </ion-list>
 </ion-content>
