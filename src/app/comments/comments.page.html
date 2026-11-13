@@ -6,6 +6,7 @@
 </ion-header>
 
 <ion-content [fullscreen]="true">
+  @if ( comments$ | async; as comments ) {
   <ion-list lines="full">
     @for (comment of (comments$ | async); track comment.id) {
     <ion-item>
@@ -29,4 +30,16 @@
 
     }
   </ion-list>
+  } @else {
+    <div class="spinner-container">
+      <ion-spinner name="cresent" color="primary"></ion-spinner> 
+      <p>Loading comments...</p>
+    </div>
+  }
+
+
+
+
+
+
 </ion-content>
