@@ -1,15 +1,17 @@
 
+
 <ion-header [translucent]="true">
-  <ion-toolbar color="primary">
+  <ion-toolbar color="success">
     <ion-title class="ion-text-center">Posts</ion-title>
   </ion-toolbar>
 </ion-header>
 
 
 <ion-content>
+  @if ( posts$ | async; as posts ) {
   <ion-list lines="inset">
     @for (post of (posts$ | async); track post.id) {
-      <ion-item>
+    <ion-item>
       <ion-icon name="document-text-outline" slot="start" color="primary"></ion-icon>
       <ion-label class="ion-text-wrap">
         <h2>{{ post.title }}</h2>
@@ -18,4 +20,11 @@
     </ion-item>
     }
   </ion-list>
+
+  } @else {
+  <div class="spinner-container">
+    <ion-spinner name="cresent" color="primary"></ion-spinner>
+    <p>Loading posts...</p>
+  </div>
+  }
 </ion-content>
