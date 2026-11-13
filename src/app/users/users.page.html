@@ -6,6 +6,8 @@
 </ion-header>
 
 <ion-content>
+
+  @if ( users$ | async; as users ) {
   <ion-list lines="inset">
     @for (user of (users$ | async); track user.id) {
     <ion-item>
@@ -18,9 +20,17 @@
         <p>Location: {{user.address.city}}, {{ user.address.street }} </p>
       </ion-label>
     </ion-item>
-
     }
-
-
   </ion-list>
+  } @else {
+    <div class="spinner-container">
+      <ion-spinner name="cresent" color="primary"></ion-spinner>
+      <p>Loading users...</p>
+    </div>
+  }
+
+
+
+
+
 </ion-content>
