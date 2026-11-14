@@ -40,6 +40,10 @@ const routes: Routes = [
     path: 'comments',
     loadChildren: () => import('./comments/comments.module').then( m => m.CommentsPageModule)
   },
+  {
+    path: 'albums',
+    loadChildren: () => import('./albums/albums.module').then( m => m.AlbumsPageModule)
+  },
 ];
 
 @NgModule({
