@@ -10,12 +10,12 @@
     <ion-list lines="full">
       @for (album of (albums$ | async ); track album.id) {
         <ion-item>
-          <h3> {{ album.title }} </h3>
+          <ion-label class="ion-text-wrap">
+              <h2> {{ album.title }} </h2>
+          </ion-label>
         </ion-item>
       }
-
     </ion-list>
-
   } @else {
     <div class="spinner-container">
       <ion-spinner name="cresent" color="primary"></ion-spinner>
