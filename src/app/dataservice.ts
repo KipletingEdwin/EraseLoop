@@ -27,6 +27,11 @@ export class Dataservice {
     return this.http.get(`${this.apiUrl}/comments`);
   }
 
+  //Fetch Albums
+  getAlbums(): Observable<any> {
+    return this.http.get(`${this.apiUrl}/albums`)
+  }
+
 
 
 

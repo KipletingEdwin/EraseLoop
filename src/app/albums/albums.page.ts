@@ -1,4 +1,6 @@
+
 import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-albums',
@@ -7,6 +9,7 @@ import { Component, OnInit } from '@angular/core';
   standalone: false,
 })
 export class AlbumsPage implements OnInit {
+  albums$! :Observable<any[]>;
 
   constructor() { }
 
