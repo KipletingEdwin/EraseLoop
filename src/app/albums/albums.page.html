@@ -7,9 +7,17 @@
 
 <ion-content [fullscreen]="true">
   @if ( albums$ | async; as albums ) {
+    <ion-list lines="full">
+      @for (album of (albums$ | async ); track album.id) {
+        <ion-item>
+          <h3> {{ album.title }} </h3>
+        </ion-item>
+      }
+
+    </ion-list>
 
   } @else {
-    <div>
+    <div class="spinner-container">
       <ion-spinner name="cresent" color="primary"></ion-spinner>
       <p>Loading albums...</p>
     </div>
