@@ -13,22 +13,6 @@ const routes: Routes = [
     pathMatch: 'full'
   },
   {
-    path: 'about',
-    loadChildren: () => import('./about/about.module').then( m => m.AboutPageModule)
-  },
-  {
-    path: 'services',
-    loadChildren: () => import('./services/services.module').then( m => m.ServicesPageModule)
-  },
-  {
-    path: 'projects',
-    loadChildren: () => import('./projects/projects.module').then( m => m.ProjectsPageModule)
-  },
-  {
-    path: 'contacts',
-    loadChildren: () => import('./contacts/contacts.module').then( m => m.ContactsPageModule)
-  },
-  {
     path: 'posts',
     loadChildren: () => import('./posts/posts.module').then( m => m.PostsPageModule)
   },
@@ -43,6 +27,10 @@ const routes: Routes = [
   {
     path: 'albums',
     loadChildren: () => import('./albums/albums.module').then( m => m.AlbumsPageModule)
+  },
+  {
+    path: 'photos',
+    loadChildren: () => import('./photos/photos.module').then( m => m.PhotosPageModule)
   },
 ];
 
