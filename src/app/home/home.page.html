@@ -15,7 +15,6 @@
               <ion-card-title>Posts</ion-card-title>
               <ion-card-subtitle>Here is a list of posts from the API</ion-card-subtitle>
             </ion-card-header>
-
             <ion-card-content></ion-card-content>
             <ion-card-content></ion-card-content>
             <ion-card-content class="ion-display-flex ion-justify-content-center">
@@ -30,7 +29,6 @@
             <ion-card-title class="ion-text-center">Users</ion-card-title>
             <ion-card-subtitle>Here is a a lists of users from the API</ion-card-subtitle>
           </ion-card-header>
-
             <ion-card-content></ion-card-content>
             <ion-card-content></ion-card-content>
             <ion-card-content class="ion-text-center">
@@ -45,7 +43,6 @@
             <ion-card-title>Comments</ion-card-title>
             <ion-card-subtitle>This is a list of comments from the API</ion-card-subtitle>
           </ion-card-header>
-
           <ion-card-content></ion-card-content>
           <ion-card-content></ion-card-content>
           <ion-card-content  class="ion-text-center">
@@ -64,7 +61,20 @@
           <ion-card-content></ion-card-content>
           <ion-card-content class="ion-text-center">
             <ion-button fill="outline" [routerLink]="['/albums']"  >Albums</ion-button>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
 
+      <ion-col size="12" sizeMd="6" sizeLg="4">
+        <ion-card>
+          <ion-card-header class="ion-text-center" color="danger">
+            <ion-card-title>Photos</ion-card-title>
+            <ion-card-subtitle>This is a list of photos from the API</ion-card-subtitle>
+          </ion-card-header>
+          <ion-card-content></ion-card-content>
+          <ion-card-content></ion-card-content>
+          <ion-card-content class="ion-text-center">
+            <ion-button fill="outline" [routerLink]="['/photos']" >Photos</ion-button>
           </ion-card-content>
         </ion-card>
       </ion-col>
