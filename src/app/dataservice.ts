@@ -32,8 +32,10 @@ export class Dataservice {
     return this.http.get(`${this.apiUrl}/albums`)
   }
 
-
-
+  //Fetch Photos
+  getPhotos(): Observable<any> {
+    return this.http.get(`${this.apiUrl}/photos`)
+  }
 
 
 }
