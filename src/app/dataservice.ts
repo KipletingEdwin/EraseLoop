@@ -33,8 +33,10 @@ export class Dataservice {
   }
 
   //Fetch Photos
-  getPhotos(): Observable<any> {
-    return this.http.get(`${this.apiUrl}/photos`)
+  getPhotos(): Observable<any[]> {
+    return this.http.get<any[]>(`${this.apiUrl}/photos`).pipe(
+      map((photos) => photos.slice(0, 50))
+    )
   }
 
 
