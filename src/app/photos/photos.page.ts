@@ -1,5 +1,7 @@
 
 import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
+import { Dataservice } from '../dataservice';
 
 @Component({
   selector: 'app-photos',
@@ -9,9 +11,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PhotosPage implements OnInit {
 
-  constructor() { }
+  photos$!: Observable<any[]>;
+
+  constructor(private dataService: Dataservice) { }
 
   ngOnInit() {
+    this.photos$ = this.dataService.getPhotos();
+  }
+
+  ionicViewWillEnter() {
+    this.photos$ = this.dataService.getPhotos();
+
   }
 
 }
