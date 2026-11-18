@@ -10,6 +10,20 @@
 
 <ion-content [fullscreen]="true">
   @if (photos$ | async; as photos ) {
+    <ion-grid>
+      <ion-row>
+        @for (photo of photos; track photo.id) {
+          <ion-col size="6" sizeMd="3">
+            <ion-card class="ion-no-margin">
+              <img loading="lazy" [src]="photo.thumbnailUrl" [alt]="photo.title"  />
+              <ion-card-content>
+                <p class="photo-title">{{photo.title}}</p>
+              </ion-card-content>
+            </ion-card>
+          </ion-col>
+        }
+      </ion-row>
+    </ion-grid>
 
 
 
