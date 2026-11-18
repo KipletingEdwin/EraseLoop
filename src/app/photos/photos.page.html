@@ -1,11 +1,24 @@
 
 <ion-header [translucent]="true">
-  <ion-toolbar>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/home"></ion-back-button>
+    </ion-buttons>
     <ion-title class="ion-text-center" >Photos</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
+  @if (photos$ | async; as photos ) {
+
+
+
+  } @else {
+    <div class="spinner-container">
+      <ion-spinner name="cresent" color="primary"></ion-spinner>
+      <p>Loading photos...</p>
+    </div>
+  }
 
 </ion-content>
 
