@@ -25,48 +25,13 @@
       </ion-row>
     </ion-grid>
 
-
-
   } @else {
     <div class="spinner-container">
-      <ion-spinner name="cresent" color="primary"></ion-spinner>
+      <ion-spinner name="bubbles" color="primary"></ion-spinner>
       <p>Loading photos...</p>
     </div>
   }
 
 </ion-content>
 
-<!-- 
-<ion-content [fullscreen]="true">
-  @if ( comments$ | async; as comments ) {
-  <ion-list lines="full">
-    @for (comment of (comments$ | async); track comment.id) {
-    <ion-item>
-      <ion-avatar slot="start">
-        <ion-icon
-          name="chatbubble-ellipses-outline"
-          size="large"
-          color="secondary"
-        ></ion-icon>
-      </ion-avatar>
-      <ion-label class="ion-text-wrap">
-        <ion-text color="dark">
-          <h3><strong> {{ comment.name }} </strong></h3>
-        </ion-text>
-        <ion-note color="medium"> {{ comment.email }} </ion-note>
-        <p class="ion-margin-top" style="font-style: italic">
-          {{comment.body}}
-        </p>
-      </ion-label>
-    </ion-item>
-
-    }
-  </ion-list>
-  } @else {
-  <div class="spinner-container">
-    <ion-spinner name="cresent" color="primary"></ion-spinner>
-    <p>Loading comments...</p>
-  </div>
-  }
-</ion-content> -->
 

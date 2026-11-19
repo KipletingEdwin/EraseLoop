@@ -1,6 +1,9 @@
 
 <ion-header>
   <ion-toolbar color="tertiary">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/home"></ion-back-button>
+    </ion-buttons>
     <ion-title class="ion-text-center">Users</ion-title>
   </ion-toolbar>
 </ion-header>
@@ -24,7 +27,7 @@
   </ion-list>
   } @else {
     <div class="spinner-container">
-      <ion-spinner name="cresent" color="primary"></ion-spinner>
+      <ion-spinner name="bubbles" color="primary"></ion-spinner>
       <p>Loading users...</p>
     </div>
   }

@@ -2,6 +2,9 @@
 
 <ion-header [translucent]="true">
   <ion-toolbar color="success">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/home"></ion-back-button>
+    </ion-buttons>
     <ion-title class="ion-text-center">Posts</ion-title>
   </ion-toolbar>
 </ion-header>
@@ -23,7 +26,7 @@
 
   } @else {
   <div class="spinner-container">
-    <ion-spinner name="cresent" color="primary"></ion-spinner>
+    <ion-spinner name="bubbles" color="primary"></ion-spinner>
     <p>Loading posts...</p>
   </div>
   }
